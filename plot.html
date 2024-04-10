@@ -6,103 +6,6 @@
     <title>Chess Analysis</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-    <style>
-      /* Base styles */
-      body {
-        background-color: #f0f0f0;
-        margin: 0;
-        padding: 0;
-        display: flex;
-      }
-
-      .legend {
-        width: 10%;
-        height: 100vh;
-        background-color: rgba(36, 42, 102, 0.8);
-        z-index: 999;
-        position: fixed;
-        top: 0;
-        left: 0;
-        overflow-y: auto;
-      }
-
-      .legend-content {
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .legend-item {
-        margin-bottom: 5px;
-      }
-
-      /* Heading styles */
-      .legend-item.heading {
-        color: rgb(0, 255, 238);
-        font-weight: 400;
-        margin-bottom: 10px;
-      }
-      .legend-item.heading1 {
-        color: rgb(119, 253, 238);
-        font-weight: 800;
-        margin-bottom: 10px;
-      }
-
-      /* Horizontal line styles */
-      .legend-line {
-        border-top: 1px solid #000000;
-        margin-bottom: 10px;
-      }
-
-      /* Color square styles */
-      .color-square {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        margin-right: 5px;
-      }
-      .color-circle {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%; /* Make the square a circle */
-        margin-right: 5px;
-      }
-      /* Legend label styles */
-      .legend-label {
-        vertical-align: middle;
-        color: rgb(0, 0, 0);
-      }
-
-      /* Legend item styles */
-      .legend-item {
-        margin-bottom: 5px;
-        display: flex;
-        align-items: center;
-      }
-      .legend-item.p {
-        color: rgb(255, 255, 255);
-      }
-      .legend-item.n {
-        color: rgb(0, 0, 0);
-      }
-
-      /* Main content styles */
-      .main-content {
-        flex: 1;
-        padding: 20px;
-        margin-left: 10%;
-      }
-
-      /* Additional styling for main content elements */
-      #plot-white,
-      #chart,
-      #plot-black,
-      #score-plot,
-      svg {
-        margin-bottom: 20px;
-      }
-    </style>
   </head>
   <body>
     <div class="legend">
@@ -176,7 +79,6 @@
     </div>
 
     <div class="main-content">
-      <!-- Rest of your HTML content -->
       <div id="plot-white"></div>
       <div id="chart"></div>
       <div id="plot-black"></div>
