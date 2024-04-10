@@ -5,7 +5,7 @@ import {
 var HIDDEN_BAR_COLOUR = '#f0f0f0';
 
 // Data loading and visualization for white players
-d3.csv("chess_data.csv").then(function (data) {
+d3.csv("chess_data_3.csv").then(function (data) {
     // Create SVG for white players
     const svgWhite = createSVG("#plot-white");
 

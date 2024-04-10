@@ -13,7 +13,7 @@ const AXIS_LINE_COLOR = "blue";
 
 var plot_height_adj = 2 * plot_height; // 500
 
-d3.csv("chess_data.csv").then(function (data) {
+d3.csv("chess_data_3.csv").then(function (data) {
     console.log(data)
 
     var svg = d3.select("#chart")

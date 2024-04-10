@@ -5,7 +5,7 @@ import {
 var plot_height_adj = 2 * plot_height; // 500
 
 // Load the data from the CSV file
-d3.csv("data.csv").then(function (data) {
+d3.csv("data_3.csv").then(function (data) {
    // Convert Score values to integers
    data.forEach(function (d) {
       d.Score = +d.Score;
