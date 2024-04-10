@@ -1,0 +1,18 @@
+body {
+  background-color: #000;
+}
+
+#chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#plot-white,
+#plot-black {
+  height: 250; /* Set the height of the SVG container */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
