@@ -66,12 +66,13 @@ function createBars(svg, data, color) {
         .call(xAxis)
         .selectAll("text") // Select all x-axis labels
         .attr("transform", "rotate(-90)") // Rotate each label by -90 degrees
+        .style("fill", "black") // Set the fill color of the labels
         .attr("y", 0) // Reset the y-coordinate
         .attr("x", -10) // Adjust the x-coordinate to ensure the labels stay within the plot area
         .attr("dy", ".35em") // Fine-tune the vertical positioning if needed
         .style("text-anchor", "end")
         .selectAll("path, line")
-        .attr("stroke", "white");
+        .attr("stroke", "black");
 
     if (color === "grey") {
         x_axis_elems.attr("y", -10); // Move labels above the axis line
@@ -81,10 +82,10 @@ function createBars(svg, data, color) {
     // x_axis_elems.selectAll("text").remove();
 
     svg.append("g").call(yAxis).selectAll("path, line")
-        .attr("stroke", "white");
+        .attr("stroke", "black");
 
     svg.selectAll(".tick text")
-        .style("fill", "white");
+        .style("fill", "black");
 
     // Create bars
     svg.selectAll("rect")

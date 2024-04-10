@@ -6,11 +6,28 @@
     <title>Chess Analysis</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <style>
+      /* Add CSS styling here */
+      body {
+          background-color: #f0f0f0; /* Set background color to gray */
+      }
+      
+      .bar.positive {
+          fill: white; /* Set fill color of positive bars to white */
+      }
+      
+      .bar.negative {
+          fill: black; /* Set fill color of negative bars to black */
+      }
+  </style>
   </head>
   <body>
     <div id="plot-white"></div>
     <div id="chart"></div>
     <div id="plot-black"></div>
+    <svg width="20" height="500"></svg>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="script1.js"></script>
     <script type="module" src="script.js"></script>
     <script type="module" src="time_script.js"></script>
   </body>

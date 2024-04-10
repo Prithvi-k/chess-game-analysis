@@ -2,7 +2,7 @@ export const plot_width = 2000
 
 export const plot_height = 250
 
-export const margin = { top: 20, right: 20, bottom: 30, left: 40 };
+export const margin = { top: 90, right: 20, bottom: 90, left: 40 };
 
 // export const axis_colour = ;
 
