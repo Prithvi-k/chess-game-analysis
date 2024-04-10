@@ -57,10 +57,10 @@ d3.csv("chess_data.csv").then(function (data) {
         .attr("transform", `translate(0, 0)`)
         .call(d3.axisLeft(yScale))
         .selectAll("path, line")
-        .attr("stroke", "white");
+        .attr("stroke", "black");
 
     svg.selectAll(".tick text")
-        .style("fill", "white");
+        .style("fill", "black");
 
     svg.selectAll(".bar")
         .data(data)

@@ -2,21 +2,13 @@ import {
     plot_width, plot_height, margin, brilliancyColors
 } from './constants.js';
 
-var HIDDEN_BAR_COLOUR = '#f0f0f0';
-
 // Data loading and visualization for white players
 d3.csv("chess_data.csv").then(function (data) {
     // Create SVG for white players
-    const svgWhite = createSVG("#plot-white");
+    const svgWhite = createSVG("#score-plot");
 
     // Create bars for white players
     createBars(svgWhite, data, "grey");
-
-    // Create SVG for black 
-    const svgBlack = createSVG("#plot-black");
-
-    // Create bars for black players
-    createBars(svgBlack, data, "black");
 });
 
 function createSVG(container) {
@@ -32,9 +24,7 @@ function createBars(svg, data, color) {
 
     data.forEach(function (d) {
         d.Player = d.Player;
-        d.Move = d.Move;
-        d.Brilliancy = d.Brilliancy;
-        color === "black" ? (d.TimeTaken = -d["Time Taken"]) : (d.TimeTaken = d["Time Taken"]);
+        d.Score = +d.Score;
     });
 
     // Create sequential array for x-axis labels
@@ -42,8 +32,8 @@ function createBars(svg, data, color) {
 
     // Determine the maximum absolute value for y-axis
     const maxYValue = Math.max(
-        Math.abs(d3.max(data, (d) => Math.abs(d.TimeTaken))),
-        Math.abs(d3.min(data, (d) => Math.abs(d.TimeTaken)))
+        Math.abs(d3.max(data, (d) => Math.abs(d.Score))),
+        Math.abs(d3.min(data, (d) => Math.abs(d.Score)))
     ) * 1.1;
 
     // Create scales
@@ -76,11 +66,6 @@ function createBars(svg, data, color) {
         .selectAll("path, line")
         .attr("stroke", "black");
 
-    if (color === "grey") {
-        x_axis_elems.attr("y", -10); // Move labels above the axis line
-    }
-
-
     // x_axis_elems.selectAll("text").remove();
 
     svg.append("g").call(yAxis).selectAll("path, line")
@@ -96,9 +81,9 @@ function createBars(svg, data, color) {
         .append("rect")
         .attr("x", (d, i) => xScale(`${i + 1}. ${d.Move}`))
         .attr("y", (d) =>
-            d.TimeTaken >= 0 ? yScale(d.TimeTaken) : yScale(0)
+            d.Score >= 0 ? yScale(d.Score) : yScale(0)
         )
         .attr("width", xScale.bandwidth())
-        .attr("height", (d) => Math.abs(yScale(0) - yScale(d.TimeTaken)))
+        .attr("height", (d) => Math.abs(yScale(0) - yScale(d.Score)))
         .attr("fill", (d) => (color === "black" ? d.Player === "Black" ? brilliancyColors[d.Brilliancy] : HIDDEN_BAR_COLOUR : d.Player === "White" ? brilliancyColors[d.Brilliancy] : HIDDEN_BAR_COLOUR))
 }

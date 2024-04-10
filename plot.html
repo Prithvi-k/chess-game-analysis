@@ -9,25 +9,26 @@
     <style>
       /* Add CSS styling here */
       body {
-          background-color: #f0f0f0; /* Set background color to gray */
+        background-color: #f0f0f0; /* Set background color to gray */
       }
-      
+
       .bar.positive {
-          fill: white; /* Set fill color of positive bars to white */
+        fill: white; /* Set fill color of positive bars to white */
       }
-      
+
       .bar.negative {
-          fill: black; /* Set fill color of negative bars to black */
+        fill: black; /* Set fill color of negative bars to black */
       }
-  </style>
+    </style>
   </head>
   <body>
     <div id="plot-white"></div>
     <div id="chart"></div>
     <div id="plot-black"></div>
+    <div id="score-plot"></div>
     <svg width="20" height="500"></svg>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="script1.js"></script>
+    <script type="module" src="score_plot.js"></script>
     <script type="module" src="script.js"></script>
     <script type="module" src="time_script.js"></script>
   </body>
